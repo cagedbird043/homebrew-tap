@@ -20,6 +20,7 @@ class SingBoxCagedbird < Formula
   end
 
   conflicts_with "sing-box", because: "both install the sing-box binary"
+  conflicts_with "sing-box-ref1nd", because: "both install the sing-box binary"
 
   def install
     bin.install "sing-box"
