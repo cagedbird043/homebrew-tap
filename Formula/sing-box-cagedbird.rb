@@ -29,6 +29,14 @@ class SingBoxCagedbird < Formula
     generate_completions_from_executable(bin/"sing-box", "completion")
   end
 
+  service do
+    run [opt_bin/"sing-box", "-D", var/"lib/sing-box", "-C", etc/"sing-box", "run"]
+    keep_alive true
+    require_root true
+    log_path var/"log/sing-box.log"
+    error_log_path var/"log/sing-box.log"
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/sing-box version")
     assert_match "with_clash_api", shell_output("#{bin}/sing-box version")
