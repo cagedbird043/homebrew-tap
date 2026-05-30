@@ -21,7 +21,35 @@ class Cxf < Formula
 
   def install
     bin.install Dir["cxf-*"].first => "cxf"
-    generate_completions_from_executable(bin/"cxf", "completion")
+    (zsh_completion/"_cxf").write <<~ZSH
+      #compdef cxf
+      _cxf_provider_ids() {
+        local provider_dir="${XDG_CONFIG_HOME:-$HOME/.config}/cxf/providers"
+        [[ -d "$provider_dir" ]] || return
+        local -a providers
+        providers=("${provider_dir}"/*.toml(N:t:r))
+        _describe -t providers 'provider' providers
+      }
+      _cxf_claude_provider_ids() {
+        local provider_dir="${XDG_CONFIG_HOME:-$HOME/.config}/cxf/claude/providers"
+        [[ -d "$provider_dir" ]] || return
+        local -a providers
+        providers=("${provider_dir}"/*.toml(N:t:r))
+        _describe -t providers 'claude provider' providers
+      }
+      _cxf() {
+        local -a cmds
+        cmds=('init' 'list' 'current' 'use' 'add' 'edit' 'remove' 'rename' 'status' 'completion' 'claude')
+        if (( CURRENT == 2 )); then
+          _describe -t commands 'cxf command' cmds
+        elif [[ "$words[2]" == (use|edit|remove|rename) ]]; then
+          _cxf_provider_ids
+        elif [[ "$words[2]" == claude && "$words[3]" == (use|edit|remove|rename) ]]; then
+          _cxf_claude_provider_ids
+        fi
+      }
+      _cxf "$@"
+    ZSH
   end
 
   test do

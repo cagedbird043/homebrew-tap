@@ -22,7 +22,36 @@ class SkillsCli < Formula
 
   def install
     bin.install Dir["skills-*"].first => "skills"
-    generate_completions_from_executable(bin/"skills", "completion", "zsh")
+    (zsh_completion/"_skills").write <<~ZSH
+      #compdef skills
+
+      _skills() {
+        local -a cmds
+        cmds=(
+          'list:list all skills with status'
+          'install:install from lock (fast, no remote check)'
+          'update:audit and update skills'
+          'remove:remove a skill from manifest and disk'
+          'verify:(deprecated) use skills update --dry-run'
+          'info:show skill details'
+          'completion:generate shell completion'
+        )
+        _describe -t commands 'skills command' cmds
+
+        case "$words[2]" in
+          update)
+            _alternative \\
+              'args::(--dry-run -n --yes -y)'
+            ;;
+          remove)
+            _alternative \\
+              'args::(--dry-run -n --keep-manifest -k)'
+            ;;
+        esac
+      }
+
+      _skills "$@"
+    ZSH
   end
 
   test do
