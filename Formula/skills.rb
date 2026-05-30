@@ -21,7 +21,7 @@ class Skills < Formula
   end
 
   def install
-    bin.install "skills"
+    bin.install Dir["skills-*"].first => "skills"
   end
 
   test do

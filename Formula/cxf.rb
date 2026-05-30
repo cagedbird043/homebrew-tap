@@ -20,7 +20,7 @@ class Cxf < Formula
   end
 
   def install
-    bin.install "cxf"
+    bin.install Dir["cxf-*"].first => "cxf"
   end
 
   test do
