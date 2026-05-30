@@ -1,7 +1,7 @@
 class Cxf < Formula
   desc "Codex / Claude provider pointer manager"
   homepage "https://github.com/cagedbird043/cxf"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
@@ -21,7 +21,7 @@ class Cxf < Formula
 
   resource "completion" do
     url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/_cxf"
-    sha256 "PLACEHOLDER_CXF_COMPLETION_SHA"
+    sha256 "a53c14b5eea01c638ae65aa1ae594f284b67105dde7fad7ce401c4c961d1c963"
   end
 
   def install
