@@ -20,12 +20,12 @@ brew install cagedbird043/tap/sing-box-cagedbird
 brew install cagedbird043/tap/cxf
 ```
 
-### skills
+### skills-cli
 
-`skills` is an agent skill manager — manifest + lock + mirrors for multi-agent skill governance.
+`skills-cli` is an agent skill manager — manifest + lock + mirrors for multi-agent skill governance.
 
 ```bash
-brew install cagedbird043/tap/skills
+brew install cagedbird043/tap/skills-cli
 ```
 
 ## Upgrade

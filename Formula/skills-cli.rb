@@ -1,4 +1,4 @@
-class Skills < Formula
+class SkillsCli < Formula
   desc "Agent skill manager — manifest + lock + mirrors for multi-agent skill governance"
   homepage "https://github.com/cagedbird043/skills"
   version "0.5.1"
