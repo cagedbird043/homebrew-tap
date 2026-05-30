@@ -21,7 +21,7 @@ class SkillsCli < Formula
   end
 
   resource "completion" do
-    url "https://github.com/cagedbird043/skills/releases/download/v#{version}/_skills"
+    url "https://github.com/cagedbird043/skills/releases/download/v0.5.3/_skills"
     sha256 "PLACEHOLDER_COMPLETION_SHA"
   end
 

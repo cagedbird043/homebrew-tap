@@ -20,7 +20,7 @@ class Cxf < Formula
   end
 
   resource "completion" do
-    url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/_cxf"
+    url "https://github.com/cagedbird043/cxf/releases/download/v0.1.1/_cxf"
     sha256 "a53c14b5eea01c638ae65aa1ae594f284b67105dde7fad7ce401c4c961d1c963"
   end
 
