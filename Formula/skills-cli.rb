@@ -9,10 +9,6 @@ class SkillsCli < Formula
       url "https://github.com/cagedbird043/skills/releases/download/v#{version}/skills-darwin-arm64"
       sha256 "abb92bef84e09c73ae82916aeffcf066f4df1ba796c19b5bfad9c665693b3a32"
     end
-    on_intel do
-      url "https://github.com/cagedbird043/skills/releases/download/v#{version}/skills-darwin-amd64"
-      sha256 "019356b1fa469e9a385e92b8e7bdd161c7510b1c895093f721b74ef0a46f35dd"
-    end
   end
 
   on_linux do
