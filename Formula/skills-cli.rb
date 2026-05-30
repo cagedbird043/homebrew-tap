@@ -22,7 +22,7 @@ class SkillsCli < Formula
 
   def install
     bin.install Dir["skills-*"].first => "skills"
-    (zsh_completion/"_skills").write Utils.safe_popen_read(bin/"skills", "completion", "zsh")
+    generate_completions_from_executable(bin/"skills", "completion", "zsh")
   end
 
   test do

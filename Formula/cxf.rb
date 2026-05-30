@@ -21,7 +21,7 @@ class Cxf < Formula
 
   def install
     bin.install Dir["cxf-*"].first => "cxf"
-    (zsh_completion/"_cxf").write Utils.safe_popen_read(bin/"cxf", "completion")
+    generate_completions_from_executable(bin/"cxf", "completion")
   end
 
   test do
