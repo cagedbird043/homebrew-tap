@@ -20,38 +20,14 @@ class SkillsCli < Formula
     sha256 "b360f474470b9378582f76f71b22c16e3fa06b9a93dbcbb26a5b057f5ddfafa0"
   end
 
+  resource "completion" do
+    url "https://github.com/cagedbird043/skills/releases/download/v#{version}/_skills"
+    sha256 "PLACEHOLDER_COMPLETION_SHA"
+  end
+
   def install
     bin.install Dir["skills-*"].first => "skills"
-    (zsh_completion/"_skills").write <<~ZSH
-      #compdef skills
-
-      _skills() {
-        local -a cmds
-        cmds=(
-          'list:list all skills with status'
-          'install:install from lock (fast, no remote check)'
-          'update:audit and update skills'
-          'remove:remove a skill from manifest and disk'
-          'verify:(deprecated) use skills update --dry-run'
-          'info:show skill details'
-          'completion:generate shell completion'
-        )
-        _describe -t commands 'skills command' cmds
-
-        case "$words[2]" in
-          update)
-            _alternative \\
-              'args::(--dry-run -n --yes -y)'
-            ;;
-          remove)
-            _alternative \\
-              'args::(--dry-run -n --keep-manifest -k)'
-            ;;
-        esac
-      }
-
-      _skills "$@"
-    ZSH
+    (zsh_completion/"_skills").write resource("completion").cached_download.read
   end
 
   test do
