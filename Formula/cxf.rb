@@ -7,7 +7,7 @@ class Cxf < Formula
   on_macos do
     on_arm do
       url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/cxf-darwin-arm64"
-      sha256 "82ca3f40c5749c34001555903b3d3f877efbd4c3b44de0cefa6bf5f4288b738d"
+      sha256 "a43df120776933e706d6948f029385e4328b0d5a3244288c765c4c563576bd88"
     end
     on_intel do
       odie "cxf currently publishes darwin arm64 binaries only"
@@ -16,7 +16,7 @@ class Cxf < Formula
 
   on_linux do
     url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/cxf-linux-amd64"
-    sha256 "82ef25f44f338edbc2eacac92ea15e5301a39e27bb097e0b3f3e9261180a87c9"
+    sha256 "f67628da73882644f54001a94ac5ebd61c106eaa9b0c52aea21a13b839d71447"
   end
 
   resource "completion" do
