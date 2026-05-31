@@ -7,7 +7,7 @@ class Sbc < Formula
   on_macos do
     on_arm do
       url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-darwin-arm64"
-      sha256 "acce9e2e44407730ad29d7e9bf7c1949e3f5d07ba01c22b18891e89e845c5ece"
+      sha256 "c71067bcd26db2bb1b45631a88fe68c250478ca645f9cbf79afafe9041d04672"
     end
     on_intel do
       odie "sbc: Intel Mac is not supported."
@@ -17,11 +17,11 @@ class Sbc < Formula
   on_linux do
     on_arm do
       url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-linux-arm64"
-      sha256 "64f61f26ed8af0e0ba166adc47b8a00406836a1224eba85d2400ad58541e2e08"
+      sha256 "8f07744bdb71002c542e0e10ff11a35e119c3449d968d3cab3a2c68d1cbea969"
     end
     on_intel do
       url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-linux-amd64"
-      sha256 "8c68072fbec9df8e3edb6152d59200a66469ab26019d3511e8bc4a67ef187e2a"
+      sha256 "0dc13b93779b7a88a9e723493094893c19fbc3e8327c83b7201c2150a33b7fae"
     end
   end
 
