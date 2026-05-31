@@ -34,7 +34,7 @@ class Sbc < Formula
     if OS.mac?
       bin.install "sbc-darwin-arm64" => "sbc"
     elsif OS.linux?
-      bin.install "sbc-Linux-#{Hardware::CPU.arch}" => "sbc"
+      bin.install "sbc-linux-#{Hardware::CPU.arch}" => "sbc"
     end
     (zsh_completion/"_sbc").write resource("completion").cached_download.read
   end
