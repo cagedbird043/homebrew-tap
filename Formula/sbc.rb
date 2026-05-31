@@ -17,17 +17,17 @@ class Sbc < Formula
   on_linux do
     on_arm do
       url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-Linux-arm64"
-      sha256 "281a1153f2bf26fc1e626b239a28fdde0fc33ac1816efa49eb785369e6a2fa41"
+      sha256 "7456cc3826555f451afda2be0a80dcdb05246b9c5ee4b585712b3251c516d15f"
     end
     on_intel do
       url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-Linux-amd64"
-      sha256 "9605e701e09b93feb35680c895131a650ad6179d8adf43ebe1bf9e6a7c9e2334"
+      sha256 "574e857960e13a7c08613ae7595d0ff65851d5e458817c288a8adb7232459891"
     end
   end
 
   resource "completion" do
     url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/_sbc"
-    sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    sha256 "9605e701e09b93feb35680c895131a650ad6179d8adf43ebe1bf9e6a7c9e2334"
   end
 
   def install
