@@ -16,11 +16,11 @@ class Sbc < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-Linux-arm64"
+      url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-linux-arm64"
       sha256 "7456cc3826555f451afda2be0a80dcdb05246b9c5ee4b585712b3251c516d15f"
     end
     on_intel do
-      url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-Linux-amd64"
+      url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-linux-amd64"
       sha256 "574e857960e13a7c08613ae7595d0ff65851d5e458817c288a8adb7232459891"
     end
   end
