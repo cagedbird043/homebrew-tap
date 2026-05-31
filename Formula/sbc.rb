@@ -6,7 +6,7 @@ class Sbc < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-Darwin-arm64"
+      url "https://github.com/cagedbird043/sbc/releases/download/v0.1.0/sbc-darwin-arm64"
       sha256 ""
     end
     on_intel do
@@ -32,7 +32,7 @@ class Sbc < Formula
 
   def install
     if OS.mac?
-      bin.install "sbc-Darwin-arm64" => "sbc"
+      bin.install "sbc-darwin-arm64" => "sbc"
     elsif OS.linux?
       bin.install "sbc-Linux-#{Hardware::CPU.arch}" => "sbc"
     end
