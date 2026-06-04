@@ -1,25 +1,25 @@
 class SkillsCli < Formula
   desc "Agent skill manager — manifest + lock + mirrors for multi-agent skill governance"
   homepage "https://github.com/cagedbird043/skills"
-  version "0.5.17"
+  version "0.5.18"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/cagedbird043/skills/releases/download/v#{version}/skills-darwin-arm64"
-      sha256 "a3f2fc01a412a1d1f02839cb5daeadc747e0be000e0c6a9efa4e70369a7777f1"
+      sha256 "50d4974bb2f4868fb7481ca40ece798fad6aeb16f92c6d26a8c2dea1e10f4aa9"
     end
   end
 
   on_linux do
     url "https://github.com/cagedbird043/skills/releases/download/v#{version}/skills-linux-amd64"
-    sha256 "c4902db284e663b9754780750e056e0bf1ad074edc02a85c8eb03ca8d887c512"
+    sha256 "eff7dead79c2d25ff7139ff2c11e054d9d95b839c951085e9f3864f556ac3789"
   end
 
   ver = version
   resource "completion" do
     url "https://github.com/cagedbird043/skills/releases/download/v#{ver}/_skills"
-    sha256 "b9ebe21d327fd80b5334fd3cc3625df95da7ab85e949afcd63b0e5dcf194aef7"
+    sha256 "74be199980afe06e196b5898374c528af91458abe4ddb9ec00bd7e0167985ab9"
   end
 
   def install
