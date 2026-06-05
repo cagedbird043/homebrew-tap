@@ -1,13 +1,13 @@
 class Cxf < Formula
   desc "Codex / Claude provider pointer manager"
   homepage "https://github.com/cagedbird043/cxf"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/cxf-darwin-arm64"
-      sha256 "6b27ab59300f012788f2330265bdd311e0df46f32a31729dc6743f15b86af2e6"
+      sha256 "f017763b965e79e377f0ba7fafbb560b1fe22125d8a9d7b80a221a988fa4f531"
     end
     on_intel do
       odie "cxf currently publishes darwin arm64 binaries only"
@@ -16,7 +16,7 @@ class Cxf < Formula
 
   on_linux do
     url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/cxf-linux-amd64"
-    sha256 "6ab254abfb060370bcd6e5e2b897d489eb501b6ecd07add52e6ff84c18dffd77"
+    sha256 "949ad6a1d6753598c69512e8f9641644cd56d743d1ed96f3bfc2cb3188e0c640"
   end
 
   resource "completion" do
