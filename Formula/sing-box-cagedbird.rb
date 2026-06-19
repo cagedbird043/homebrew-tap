@@ -1,13 +1,13 @@
 class SingBoxCagedbird < Formula
   desc "Universal proxy platform with native Clash subscription support"
   homepage "https://github.com/cagedbird043/sing-box"
-  version "1.14.0-alpha.32-cagedbird.0aeabe3c"
+  version "1.14.0-alpha.32-cagedbird.fdf831a7"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-alpha.32-cagedbird.0aeabe3c/sing-box-cagedbird-darwin-arm64.tar.gz"
-      sha256 "334f5b25bdc2102e2e21493bdc8462683c1f21923d6a7bd259d8658bd4aee39f"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-alpha.32-cagedbird.fdf831a7/sing-box-cagedbird-darwin-arm64.tar.gz"
+      sha256 "c89bbe06444ce13758ff4255c82a85ea26d923fcb901c4308241a701fc27571e"
     end
 
     on_intel do
