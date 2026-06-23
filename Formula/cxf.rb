@@ -15,8 +15,13 @@ class Cxf < Formula
   end
 
   on_linux do
-    url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/cxf-linux-amd64"
-    sha256 "ff2f311555e1d6623e828694e4bac803478bc4b82bb905210d94efd8a6485858"
+    if Hardware::CPU.arm?
+      url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/cxf-linux-arm64"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    else
+      url "https://github.com/cagedbird043/cxf/releases/download/v#{version}/cxf-linux-amd64"
+      sha256 "ff2f311555e1d6623e828694e4bac803478bc4b82bb905210d94efd8a6485858"
+    end
   end
 
   resource "completion" do

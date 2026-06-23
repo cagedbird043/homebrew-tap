@@ -12,8 +12,13 @@ class SkillsCli < Formula
   end
 
   on_linux do
-    url "https://github.com/cagedbird043/skills/releases/download/v#{version}/skills-linux-amd64"
-    sha256 "282b0b2ef42d08eaa81d4e740a01119f40ff8867307aa755807385985380abe6"
+    if Hardware::CPU.arm?
+      url "https://github.com/cagedbird043/skills/releases/download/v#{version}/skills-linux-arm64"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+    else
+      url "https://github.com/cagedbird043/skills/releases/download/v#{version}/skills-linux-amd64"
+      sha256 "282b0b2ef42d08eaa81d4e740a01119f40ff8867307aa755807385985380abe6"
+    end
   end
 
   ver = version
