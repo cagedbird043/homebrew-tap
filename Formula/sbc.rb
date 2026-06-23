@@ -1,13 +1,13 @@
 class Sbc < Formula
   desc "sing-box commander — 管理 sing-box 服务、配置、代理、面板"
   homepage "https://github.com/cagedbird043/sbc"
-  version "0.3.3"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sbc/releases/download/v0.3.3/sbc-darwin-arm64"
-      sha256 "ff25628b63fea77a24e5a8aa595bad52482fbf7acb3ef9555e03e5bf5f2a6296"
+      url "https://github.com/cagedbird043/sbc/releases/download/v0.4.0/sbc-darwin-arm64"
+      sha256 "c97d3553d9336c2af3307c3f28350ec46e50cc6a63a647e2035feabda4f02530"
     end
     on_intel do
       odie "sbc: Intel Mac is not supported."
@@ -16,12 +16,12 @@ class Sbc < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/cagedbird043/sbc/releases/download/v0.3.3/sbc-linux-arm64"
-      sha256 "a7374303489f22b4d0f8b0bbe6d1d9544384c109f5b82d561f05c0d66b9f3b4c"
+      url "https://github.com/cagedbird043/sbc/releases/download/v0.4.0/sbc-linux-arm64"
+      sha256 "b7b5315512b5be97e4266553c6fb7cc3cfd3f4588862607fe2f7d0900c6b4afe"
     end
     on_intel do
-      url "https://github.com/cagedbird043/sbc/releases/download/v0.3.3/sbc-linux-amd64"
-      sha256 "9a5ed117e723737fb279e4d84d305b6c67c253d69e0c932a145bc437764895c2"
+      url "https://github.com/cagedbird043/sbc/releases/download/v0.4.0/sbc-linux-amd64"
+      sha256 "f16e4c8396058f0a60d29b0a58529059de571b6f9832a394584d38c5a3faf0dd"
     end
   end
 
