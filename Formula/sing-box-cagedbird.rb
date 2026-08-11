@@ -16,7 +16,15 @@ class SingBoxCagedbird < Formula
   end
 
   on_linux do
-    odie "sing-box-cagedbird Homebrew formula currently supports macOS arm64 only; use AUR or GitHub release tarballs on Linux"
+    on_intel do
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260811085045.2fef69722/sing-box-cagedbird-linux-amd64.tar.gz"
+      sha256 "cc4d94c12d3942b6f0fdaab5ad88ca1ca193774d3d384fd4253a49f003ed8263"
+    end
+
+    on_arm do
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260811085045.2fef69722/sing-box-cagedbird-linux-arm64.tar.gz"
+      sha256 "fc3aa9dc6563925954f4a29bc7f478dd8edf9fdbd2889cf92d16340db2efce11"
+    end
   end
 
   conflicts_with "sing-box", because: "both install the sing-box binary"
