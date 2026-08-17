@@ -1,13 +1,13 @@
 class SingBoxCagedbird < Formula
   desc "Universal proxy platform with native Clash subscription support"
   homepage "https://github.com/cagedbird043/sing-box"
-  version "1.14.0-beta.12-cagedbird.20260811085045.2fef69722"
+  version "1.14.0-beta.12-cagedbird.20260817085032.a27583d0b"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260811085045.2fef69722/sing-box-cagedbird-darwin-arm64.tar.gz"
-      sha256 "824f00df5a796d8b5f8fc4d9d4b3ab124d4f1adc8694e127841826491e06f0dd"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260817085032.a27583d0b/sing-box-cagedbird-darwin-arm64.tar.gz"
+      sha256 "b6a87614292fccdab7dfdc9f9c2f635a2db956d935a12c77c4ff22893b44d724"
     end
 
     on_intel do
@@ -17,13 +17,13 @@ class SingBoxCagedbird < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260811085045.2fef69722/sing-box-cagedbird-linux-amd64.tar.gz"
-      sha256 "cc4d94c12d3942b6f0fdaab5ad88ca1ca193774d3d384fd4253a49f003ed8263"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260817085032.a27583d0b/sing-box-cagedbird-linux-amd64.tar.gz"
+      sha256 "e86118040ffc8af636473f06621ec07d35f1c9ea372b5313db7b331206fb565d"
     end
 
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260811085045.2fef69722/sing-box-cagedbird-linux-arm64.tar.gz"
-      sha256 "fc3aa9dc6563925954f4a29bc7f478dd8edf9fdbd2889cf92d16340db2efce11"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.14.0-beta.12-cagedbird.20260817085032.a27583d0b/sing-box-cagedbird-linux-arm64.tar.gz"
+      sha256 "477e5fab0dcdb751ac92bf281a308061e26ac09003f0eafd98293220d57f7d18"
     end
   end
 
