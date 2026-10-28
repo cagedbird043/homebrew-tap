@@ -1,13 +1,13 @@
 class SingBoxCagedbird < Formula
   desc "Universal proxy platform with native Clash subscription support"
   homepage "https://github.com/cagedbird043/sing-box"
-  version "1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91"
+  version "1.15.0-alpha.13-cagedbird.20261028094851.f942d2532"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/sing-box-cagedbird-darwin-arm64.tar.gz"
-      sha256 "2ff44322cd34e5d22bde16301bbd8f71f89b4f1ba0581eca9cfb250fa89ca13f"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028094851.f942d2532/sing-box-cagedbird-darwin-arm64.tar.gz"
+      sha256 "d90b8b428afe385c4e09d993fbaca0363b2650d274f66568a5bf5bc62182475e"
     end
 
     on_intel do
@@ -17,21 +17,21 @@ class SingBoxCagedbird < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/sing-box-cagedbird-linux-amd64.tar.gz"
-      sha256 "26bc85b57dd9d7aa053a225b0e3943889ecf3ba6814ba6bdaf1661be9fec5427"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028094851.f942d2532/sing-box-cagedbird-linux-amd64.tar.gz"
+      sha256 "a95e52713b951b2cb7339a1a21fd3f45ff8a73b547bee4218b5a619b8441a897"
     end
 
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/sing-box-cagedbird-linux-arm64.tar.gz"
-      sha256 "864a39408844f908a37cca48c450cb11a09b952f4b09127d2d25c07ad74a05af"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028094851.f942d2532/sing-box-cagedbird-linux-arm64.tar.gz"
+      sha256 "5731a4bc7496ef3a156193c9fbcd41e605fb91edef60c598260c379cad35ff05"
     end
   end
 
   conflicts_with "sing-box", because: "both install the sing-box binary"
 
   resource "config-pull" do
-    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/release/config/sing-box-config-pull"
-    sha256 "ab05ec803936947451452e1bf9c155d83b679b9adb0d8e52faaf2a77592dfeb1"
+    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261028094851.f942d2532/release/config/sing-box-config-pull"
+    sha256 "302c60f8b73705f4b1382c0bf35698d63b7b56940c62167f70cbb86a2efe32db"
   end
 
   def install
