@@ -1,13 +1,13 @@
 class SingBoxCagedbird < Formula
   desc "Universal proxy platform with native Clash subscription support"
   homepage "https://github.com/cagedbird043/sing-box"
-  version "1.15.0-alpha.13-cagedbird.20261027172802.7a167bdff"
+  version "1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261027172802.7a167bdff/sing-box-cagedbird-darwin-arm64.tar.gz"
-      sha256 "afd3302e110f6408c82b363ae9512e446be9595fc222c1b1c85647bc310827b4"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/sing-box-cagedbird-darwin-arm64.tar.gz"
+      sha256 "2ff44322cd34e5d22bde16301bbd8f71f89b4f1ba0581eca9cfb250fa89ca13f"
     end
 
     on_intel do
@@ -17,22 +17,47 @@ class SingBoxCagedbird < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261027172802.7a167bdff/sing-box-cagedbird-linux-amd64.tar.gz"
-      sha256 "9983e3e3a69bbbe025873b48b6423e180a1709f2671ccc51583e1f3acd3c85c8"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/sing-box-cagedbird-linux-amd64.tar.gz"
+      sha256 "26bc85b57dd9d7aa053a225b0e3943889ecf3ba6814ba6bdaf1661be9fec5427"
     end
 
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261027172802.7a167bdff/sing-box-cagedbird-linux-arm64.tar.gz"
-      sha256 "236d2f42c6a105b579511bd485453e9ee717002c79cda92c92e3959bd404532a"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/sing-box-cagedbird-linux-arm64.tar.gz"
+      sha256 "864a39408844f908a37cca48c450cb11a09b952f4b09127d2d25c07ad74a05af"
     end
   end
 
   conflicts_with "sing-box", because: "both install the sing-box binary"
 
+  resource "config-pull" do
+    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261028041726.1aabdae91/release/config/sing-box-config-pull"
+    sha256 "ab05ec803936947451452e1bf9c155d83b679b9adb0d8e52faaf2a77592dfeb1"
+  end
+
   def install
     bin.install "sing-box"
     prefix.install "BUILD-INFO.txt"
     pkgshare.install "LICENSE"
+    resource("config-pull").stage { libexec.install "sing-box-config-pull" }
+    chmod 0755, libexec/"sing-box-config-pull"
+    (etc/"sing-box").mkpath
+    (var/"lib/sing-box").mkpath
+    (pkgshare/"cn.cagedbird.sing-box-config-pull.plist").write <<~PLIST
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0"><dict>
+        <key>Label</key><string>cn.cagedbird.sing-box-config-pull</string>
+        <key>ProgramArguments</key><array><string>#{opt_libexec}/sing-box-config-pull</string></array>
+        <key>EnvironmentVariables</key><dict>
+          <key>SING_BOX_CONFIG_DIR</key><string>#{etc}/sing-box</string>
+          <key>SING_BOX_BIN</key><string>#{opt_bin}/sing-box</string>
+        </dict>
+        <key>RunAtLoad</key><true/>
+        <key>StartInterval</key><integer>1800</integer>
+        <key>StandardOutPath</key><string>#{var}/log/sing-box-config-pull.log</string>
+        <key>StandardErrorPath</key><string>#{var}/log/sing-box-config-pull.log</string>
+      </dict></plist>
+    PLIST
 
     generate_completions_from_executable(bin/"sing-box", "completion")
   end
