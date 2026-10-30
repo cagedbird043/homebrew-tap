@@ -1,13 +1,13 @@
 class SingBoxCagedbird < Formula
   desc "Universal proxy platform with native Clash subscription support"
   homepage "https://github.com/cagedbird043/sing-box"
-  version "1.15.0-alpha.13-cagedbird.20261030204403.b481393b2"
+  version "1.15.0-alpha.13-cagedbird.20261030211304.27a7cd866"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261030204403.b481393b2/sing-box-cagedbird-darwin-arm64.tar.gz"
-      sha256 "b7b51d4f9616850bc4990ad41c34f96d57178e9229afcb8777805dca8ee7271f"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261030211304.27a7cd866/sing-box-cagedbird-darwin-arm64.tar.gz"
+      sha256 "6cfa91c35964e6a13ba86cc9556c4951ce11d9e45c13f61ba1511823709662e5"
     end
 
     on_intel do
@@ -17,25 +17,25 @@ class SingBoxCagedbird < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261030204403.b481393b2/sing-box-cagedbird-linux-amd64.tar.gz"
-      sha256 "e05431d99bc231f25f3629ea41ec8795f7d2f8a912bf8dea446c8944423d9a2b"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261030211304.27a7cd866/sing-box-cagedbird-linux-amd64.tar.gz"
+      sha256 "29ad465276208ef6489bc0dce58a4e2862b6b267349cbe9c82a6c34101476586"
     end
 
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261030204403.b481393b2/sing-box-cagedbird-linux-arm64.tar.gz"
-      sha256 "3afccf59659c2b864eedfad65dce5b6b7ca5a892031b5115360252fffe52dcf7"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261030211304.27a7cd866/sing-box-cagedbird-linux-arm64.tar.gz"
+      sha256 "07ab1ba7c59abf4b804010795453761113cfeb208b87929512b8bbf447ecd1f6"
     end
   end
 
   conflicts_with "sing-box", because: "both install the sing-box binary"
 
   resource "config-pull" do
-    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261030204403.b481393b2/release/config/sing-box-config-pull"
+    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261030211304.27a7cd866/release/config/sing-box-config-pull"
     sha256 "1b790f92bb0fdb2e911cf5c02e1ba6029ce1bfb27f3319b5158c305f28693b47"
   end
 
   resource "update" do
-    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261030204403.b481393b2/release/config/sing-box-update"
+    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261030211304.27a7cd866/release/config/sing-box-update"
     sha256 "41a8bd7e2968e85101b3057dc46b356583ee528df5595700acc4290dd492c993"
   end
 
@@ -43,9 +43,9 @@ class SingBoxCagedbird < Formula
     bin.install "sing-box"
     prefix.install "BUILD-INFO.txt"
     pkgshare.install "LICENSE"
-    resource("config-pull").stage { libexec.install "sing-box-config-pull" }
+    resource("config-pull").stage { libexec.install Dir["*"].fetch(0) => "sing-box-config-pull" }
     chmod 0755, libexec/"sing-box-config-pull"
-    resource("update").stage { libexec.install "sing-box-update" }
+    resource("update").stage { libexec.install Dir["*"].fetch(0) => "sing-box-update" }
     chmod 0755, libexec/"sing-box-update"
     (bin/"sing-box-update").write <<~SH
       #!/bin/sh
