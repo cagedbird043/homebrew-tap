@@ -2,6 +2,7 @@ class SingBoxCagedbird < Formula
   desc "Universal proxy platform with native Clash subscription support"
   homepage "https://github.com/cagedbird043/sing-box"
   version "1.15.0-alpha.13-cagedbird.20261030043201.23f6fb6ce"
+  revision 1
   license "GPL-3.0-or-later"
 
   on_macos do
@@ -30,8 +31,8 @@ class SingBoxCagedbird < Formula
   conflicts_with "sing-box", because: "both install the sing-box binary"
 
   resource "config-pull" do
-    url "https://raw.githubusercontent.com/cagedbird043/sing-box/v1.15.0-alpha.13-cagedbird.20261030043201.23f6fb6ce/release/config/sing-box-config-pull"
-    sha256 "302c60f8b73705f4b1382c0bf35698d63b7b56940c62167f70cbb86a2efe32db"
+    url "https://raw.githubusercontent.com/cagedbird043/sing-box/cf90f50735fd1eb2854efb7608759c6ea35782ba/release/config/sing-box-config-pull"
+    sha256 "1b790f92bb0fdb2e911cf5c02e1ba6029ce1bfb27f3319b5158c305f28693b47"
   end
 
   def install
