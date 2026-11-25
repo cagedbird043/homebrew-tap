@@ -1,13 +1,13 @@
 class SingBoxCagedbird < Formula
   desc "Universal proxy platform with native Clash subscription support"
   homepage "https://github.com/cagedbird043/sing-box"
-  version "1.15.0-alpha.13-cagedbird.20261125135229.80173bd8c"
+  version "1.15.0-alpha.13-cagedbird.20261125154022.9d135e899"
   license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261125135229.80173bd8c/sing-box-cagedbird-darwin-arm64.tar.gz"
-      sha256 "5642b450dddfa7e407dd49d33f52cbf136cb26927152db6da8bdf698dbd6b51d"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261125154022.9d135e899/sing-box-cagedbird-darwin-arm64.tar.gz"
+      sha256 "5296bfe73c870f87ccb2e4a859d2b07ab1060239784d3874a596d3c1d3dda8c7"
     end
 
     on_intel do
@@ -17,13 +17,13 @@ class SingBoxCagedbird < Formula
 
   on_linux do
     on_intel do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261125135229.80173bd8c/sing-box-cagedbird-linux-amd64.tar.gz"
-      sha256 "9257ab01d5836d7d02ddc2a9a92a7dc2da9dac4d82368f9eee07964b16f3915d"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261125154022.9d135e899/sing-box-cagedbird-linux-amd64.tar.gz"
+      sha256 "1e48d3b39824e828024edcb67c418bf031e646fc10cce7b723b20c4b030601bd"
     end
 
     on_arm do
-      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261125135229.80173bd8c/sing-box-cagedbird-linux-arm64.tar.gz"
-      sha256 "af357629e064bf6fb11b979dcf6cec4e2ad1619e1fc9f8e3c905c6087f7f4b5d"
+      url "https://github.com/cagedbird043/sing-box/releases/download/v1.15.0-alpha.13-cagedbird.20261125154022.9d135e899/sing-box-cagedbird-linux-arm64.tar.gz"
+      sha256 "cacb911ed3ea14fa1bcf662ed9d1dcea2ce48d86d45c79b61b23e9d62511179e"
     end
   end
 
@@ -38,8 +38,9 @@ class SingBoxCagedbird < Formula
 
   def caveats
     <<~EOS
-      从远程配置安装系统服务：
-        sudo sing-box service install --config-url <URL>
+      系统服务须从仅管理员可写的固定路径运行。若 Homebrew 目录可被普通用户写入，
+      请先把二进制部署到管理员管理的目录，再运行 service install。详见：
+        https://github.com/cagedbird043/sing-box/blob/cagedbird/alpha/FORK.md#系统服务
     EOS
   end
 
